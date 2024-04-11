@@ -1,5 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,11 +9,10 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- 두 수를 입력 받는 UI(form) -->
-    <form action="/web-erp/calc" method="post">
-        <input type="text"name="su1"/>~<input type="text"name="su2"/>
-        <input type="submit"value="전송"/>
-    </form>
-    <a href="/web-erp/calc?su1=50&su2=300">두 수의 합</a>
+    Hello Java Spring~~~~DaeYong<br/>
+    <%
+    java.util.Date date = new java.util.Date();
+    %>
+    지금 시간은? <%=date.toString()%>(동적인 데이터)
 </body>
 </html>
