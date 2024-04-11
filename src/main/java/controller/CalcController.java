@@ -10,14 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/hello")
-public class HelloServlet extends HttpServlet {
+@WebServlet("/calc")
+public class CalcController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // <html> tag 를 이용해서 응답 코드 작성
+        // 클라이언트 폼에서 넘어온 파라미터를 가져오기
+        int su1 = Integer.parseInt(req.getParameter("su1"));
+        int su2 = Integer.parseInt(req.getParameter("su2"));
 
-        // 1~10 까지의 총합이??
-        int hap = MyService.hap();
+        int sum = MyService.hap(su1, su2);
 
         // 응답 시 한글 깨집 처리
         resp.setContentType("text/html;charset=UTF-8");
@@ -29,7 +30,7 @@ public class HelloServlet extends HttpServlet {
         out.println("<table border='1'>");
         out.println("<tr>");
         out.println("<td>총합</td>");
-        out.println("<td>" + hap + "</td>");
+        out.println("<td>" + sum + "</td>");
         out.println("</tr>");
         out.println("</table>");
         out.println("</body>");
