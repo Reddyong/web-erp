@@ -15,6 +15,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
     compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+
+    // JSTL API
+    implementation 'javax.servlet:jstl:1.2'
 }
 
 test {
