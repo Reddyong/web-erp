@@ -23,7 +23,7 @@
   <div class="card">
     <div class="card-header">Header</div>
     <div class="card-body">
-        <h5>책 리스트 보기</h5>
+        <h5>책 가격 순 리스트 보기</h5>
         <table class = "table table-bordered table-hover">
             <thead>
                 <tr>
