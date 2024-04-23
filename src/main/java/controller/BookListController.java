@@ -30,7 +30,7 @@ public class BookListController extends HttpServlet {
 //        list.add(new Book(5, "Spring2", 15000, "Lee", 300));
 
         // 가격 비싼 순 정렬
-//        Collections.sort(books, (o1, o2) -> o2.getPrice() - o1.getPrice());
+        Collections.sort(books, (o1, o2) -> o2.getPrice() - o1.getPrice());
 
         // 객체 바인딩
         req.setAttribute("list", books);
