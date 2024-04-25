@@ -10,7 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/register")
+// Spring 으로 전환 했을때!!
+// FrontController - Servlet - O : 1개 - forward, redirect -- 제공
+// HandlerMapping -- 제공
+// Controller(Servlet - X) : POJO - 여러개(업무단위 별로 1개씩)
+// ViewResolver -- 제공
+//@WebServlet("/register")
 public class BookRegisterController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,5 +35,15 @@ public class BookRegisterController extends HttpServlet {
 
         BookDAO bookDAO = new BookDAO();
         int cnt = bookDAO.save(book);
+
+        // 성공 -> 다시 리스트 페이지로 돌아가기 : redirect
+        if (cnt > 0) {
+            resp.sendRedirect("/web-erp/bookList");
+        } else {
+            throw new ServletException("error");
+        }
+
+        // 실패 -> 예외 발생
+
     }
 }

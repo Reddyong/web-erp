@@ -15,7 +15,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-@WebServlet("/bookList")
+//@WebServlet("/bookList")
 public class BookListController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,14 +29,11 @@ public class BookListController extends HttpServlet {
 //        list.add(new Book(4, "Spring1", 25000, "Kim", 250));
 //        list.add(new Book(5, "Spring2", 15000, "Lee", 300));
 
-        // 가격 비싼 순 정렬
-        Collections.sort(books, (o1, o2) -> o2.getPrice() - o1.getPrice());
-
         // 객체 바인딩
         req.setAttribute("list", books);
 
         // View(JSP) 와 연동하기(forward, dispatcher)
-        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/list.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher(ViewResolver.makeView("list"));
         rd.forward(req, resp);
 
     }

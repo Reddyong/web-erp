@@ -4,7 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.mybatis.example.BlogMapper">
     <select id="findAll" resultType="entity.Book">
-        select * from book
+        select * from book order by price desc
     </select>
 
     <insert id="save" parameterType="entity.Book">

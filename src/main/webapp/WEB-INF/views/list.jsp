@@ -46,7 +46,7 @@
             </c:forEach>
             </tbody>
         </table>
-        <button class="btn btn-small btn-primary" onclick="location.href='${cpath}/registerUI'">등록</button>
+        <button class="btn btn-small btn-primary" onclick="location.href='${cpath}/register'">등록</button>
     </div>
     <div class="card-footer">패스트캠퍼스 부트캠프 8기_홍대용</div>
   </div>

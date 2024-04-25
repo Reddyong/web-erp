@@ -28,6 +28,12 @@ dependencies {
 
     // MyBatis API
     implementation 'org.mybatis:mybatis:3.5.6'
+
+    // Spring Web MVC API
+    implementation 'org.springframework:spring-webmvc:5.3.10'
+
+    // Object -> JSON
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
 }
 
 test {
