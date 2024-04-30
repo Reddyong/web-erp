@@ -2,17 +2,27 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.mybatis.example.BlogMapper">
+<mapper namespace="repository.BookMapper">
     <select id="findAll" resultType="entity.Book">
         select * from book order by price desc
     </select>
 
     <insert id="save" parameterType="entity.Book">
         insert into book(title, price, author, page)
-        values(#{title}, #{price}, #{price}, #{page})
+        values(#{title}, #{price}, #{author}, #{page})
     </insert>
 
     <delete id="bookDelete">
         delete from book where num=#{num}
     </delete>
+
+    <select id="getByNum" resultType="entity.Book">
+        select * from book where num=#{num}
+    </select>
+    
+    <update id="bookUpdate" parameterType="entity.Book">
+        update book
+        set title=#{book.title}, price=#{book.price}, author=#{book.author}, page=#{book.page}
+        where num=#{num}
+    </update>
 </mapper>

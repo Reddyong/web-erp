@@ -20,7 +20,16 @@
 <div class="container mt-3">
     <h2>Spring MVC Framework</h2>
     <div class="card">
-        <div class="card-header">Header</div>
+        <div class="card-header">
+            <form class="form-inline" action="${cpath}/login" method="post">
+                <label for="username"> ID : </label>
+                <input type="text" class="form-control" placeholder="Enter username" id="username" name="username">
+                <label for="password"> Password : </label>
+                <input type="password" class="form-control" placeholder="Enter password" id="password" name="password">
+
+                <button type="submit" class="btn btn-primary btn-sm">Login</button>
+            </form>
+        </div>
         <div class="card-body">
             <h5>책리스트 보기</h5>
             <table class="table table-bordered table-hover">
