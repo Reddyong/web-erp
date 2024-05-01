@@ -21,6 +21,7 @@
     <h2>Spring MVC Framework</h2>
     <div class="card">
         <div class="card-header">
+            <c:if test="${empty dbmem}">
             <form class="form-inline" action="${cpath}/login" method="post">
                 <label for="username"> ID : </label>
                 <input type="text" class="form-control" placeholder="Enter username" id="username" name="username">
@@ -29,6 +30,15 @@
 
                 <button type="submit" class="btn btn-primary btn-sm">Login</button>
             </form>
+            </c:if>
+
+            <c:if test="${!empty dbmem}">
+                <form class="form-inline" action="${cpath}/logout" method="post">
+<%--                    <label>Welcome~~ ${dbmem.name} 방문을 환영합니다.</label>--%>
+                    <label>Welcome~~ ${dbmem.name}님 방문을 환영합니다.</label>
+                    <button type="submit" class="btn btn-primary btn-sm">Logout</button>
+                </form>
+            </c:if>
         </div>
         <div class="card-body">
             <h5>책리스트 보기</h5>
@@ -56,7 +66,9 @@
                 </c:forEach>
                 </tbody>
             </table>
+            <c:if test="${!empty dbmem}">
             <button class="btn btn-sm btn-danger" onclick="location.href='${cpath}/register'">등록</button>
+            </c:if>
         </div>
         <div class="card-footer">패스트캠퍼스 부트캠프 8기_박매일</div>
     </div>

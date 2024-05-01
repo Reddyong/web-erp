@@ -28,4 +28,11 @@ public class LoginController {
 
         return "redirect:/bookList";
     }
+
+    @PostMapping(path = "/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+
+        return "redirect:/bookList";
+    }
 }
