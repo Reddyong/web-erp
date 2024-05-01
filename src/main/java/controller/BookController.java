@@ -33,7 +33,7 @@ public class BookController{ // new BookController() ; Spring Container(객체�
 
     @GetMapping("/register") // GET - 등록화면
     public String registerGET(){
-        return "register"; //  register.jsp : forward
+        return "register"; //  register.js : forward
     }
     @PostMapping("/register") // POST- 등록 ;
     public String registerPOST(Book book){
